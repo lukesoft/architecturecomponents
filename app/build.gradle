@@ -35,4 +35,8 @@ dependencies {
     // Lifecycle components
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
+
+    //Debug
+    debugImplementation "com.idescout.sql:sqlscout-server:$rootProject.sqlScout"
+    releaseImplementation "com.idescout.sql:sqlscout-server-noop:$rootProject.sqlScout"
 }

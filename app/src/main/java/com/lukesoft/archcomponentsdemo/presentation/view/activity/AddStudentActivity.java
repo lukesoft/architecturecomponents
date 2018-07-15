@@ -14,14 +14,22 @@ import com.lukesoft.archcomponentsdemo.R;
 public class AddStudentActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY = "com.lukesoft.studentlistdemo.presentation.view.activity.REPLY";
 
+    /**
+     * Called when the Activity is created
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
+        initUI();
+    }
 
+    /**
+     * Initialise UI components on the main screen
+     */
+    private void initUI() {
         //Input Field
         final EditText editText = findViewById(R.id.editStudentName);
-
 
         //Add Button
         Button addButton = findViewById(R.id.btnAdd);
@@ -30,10 +38,8 @@ public class AddStudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
                 if (TextUtils.isEmpty(editText.getText())) {
-
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
-
                     String word = editText.getText().toString();
                     replyIntent.putExtra(EXTRA_REPLY, word);
                     setResult(RESULT_OK, replyIntent);
@@ -43,7 +49,5 @@ public class AddStudentActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
